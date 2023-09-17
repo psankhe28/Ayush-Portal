@@ -30,22 +30,19 @@ const Home = () => {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bg="transparent"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
-        borderWidth="1px"
+        borderWidth="none"
       >
-        <Text fontSize="4xl" fontFamily="Work sans" textAlign="center">
-          Bit Chat
-        </Text>
       </Box>
 
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="white" w="70%" margin="auto" background="#7620FF" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">
-          <TabList mb="1em">
-            <Tab>Login</Tab>
-            <Tab>Sign Up</Tab>
+          <TabList mb="1em" margin="1rem">
+            <Tab background="white" padding="10px" margin="6px">Login</Tab>
+            <Tab background="white" padding="10px" margin="6px">Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

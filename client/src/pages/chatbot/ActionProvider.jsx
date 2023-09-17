@@ -37,7 +37,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       };
      
   return (
-    <div>
+    <div background="purple">
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {

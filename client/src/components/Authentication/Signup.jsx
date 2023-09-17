@@ -171,8 +171,9 @@ const Signup = () => {
     <Stack spacing="6">
       <Stack spacing="5">
         <FormControl isRequired id="name">
-          <FormLabel htmlFor="name">Name</FormLabel>
+          <FormLabel htmlFor="name" color="white">Name</FormLabel>
           <Input
+          background="white"
             type="text"
             name="name"
             value={credentials.name}
@@ -184,8 +185,9 @@ const Signup = () => {
 
       <Stack spacing="5">
         <FormControl isRequired id="email">
-          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormLabel htmlFor="email" color="white">Email</FormLabel>
           <Input
+          background="white"
             type="email"
             name="email"
             value={credentials.email}
@@ -197,7 +199,7 @@ const Signup = () => {
 
       <Stack spacing="5">
         <FormControl isRequired id="password">
-          <FormLabel htmlFor="password">Password</FormLabel>
+          <FormLabel htmlFor="password" color="white">Password</FormLabel>
           <InputGroup>
             <InputRightElement w="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
@@ -205,6 +207,7 @@ const Signup = () => {
               </Button>
             </InputRightElement>
             <Input
+            background="white"
               type={show ? "text" : "password"}
               name="password"
               value={credentials.password}
@@ -217,7 +220,7 @@ const Signup = () => {
 
       <Stack spacing="5">
         <FormControl isRequired id="confirmPassword">
-          <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
+          <FormLabel htmlFor="confirmPassword" color="white">Confirm Password</FormLabel>
           <InputGroup>
             <InputRightElement w="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
@@ -225,6 +228,7 @@ const Signup = () => {
               </Button>
             </InputRightElement>
             <Input
+            background="white"
               type={show ? "text" : "password"}
               name="confirmPassword"
               value={credentials.confirmPassword}
@@ -237,7 +241,7 @@ const Signup = () => {
 
       <Stack spacing="5">
         <FormControl id="pic">
-          <FormLabel htmlFor="pic">Upload your Picture</FormLabel>
+          <FormLabel htmlFor="pic" color="white">Upload your Picture</FormLabel>
 
           <InputGroup>
             <InputLeftElement pointerEvents="none">
@@ -249,6 +253,7 @@ const Signup = () => {
               name="pic"
               accept="image/*"
               isInvalid={true}
+              background="white"
               errorBorderColor="#eaafc8"
               sx={{
                 "::file-selector-button": {

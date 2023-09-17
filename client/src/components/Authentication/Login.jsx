@@ -90,8 +90,9 @@ const Login = () => {
     <Stack spacing="6">
       <Stack spacing="5">
         <FormControl isRequired>
-          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormLabel htmlFor="email" color="white">Email</FormLabel>
           <Input
+            background="white"
             type="email"
             name="email"
             value={credentials.email}
@@ -103,8 +104,8 @@ const Login = () => {
 
       <Stack spacing="5">
         <FormControl isRequired>
-          <FormLabel htmlFor="password">Password</FormLabel>
-          <InputGroup>
+          <FormLabel htmlFor="password" color="white">Password</FormLabel>
+          <InputGroup background="white"> 
             <InputRightElement w="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? "Hide" : "Show"}
