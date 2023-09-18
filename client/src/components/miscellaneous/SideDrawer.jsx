@@ -157,7 +157,7 @@ const SideDrawer = () => {
 
         {/* App Name Section */}
         <Text fontSize="2xl" fontFamily="Work sans">
-          Bit Chat
+          Chat
         </Text>
 
         {/* User Profile and Bell Icon Section */}

@@ -9,7 +9,7 @@ const {
 // @route           POST /api/user/
 // @access          Public
 const registerUser = async (req, res) => {
-  const { name, email, password, pic } = req.body;
+  const { name, email, password, pic,userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount } = req.body;
 
   // Check if any of them is undefined
   if (!name || !email || !password) {
@@ -39,12 +39,13 @@ const registerUser = async (req, res) => {
           name,
           email,
           password: await generateHashedPassword(password),
+          userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount
         }
       : {
           name,
           email,
           password: await generateHashedPassword(password),
-          pic,
+          pic,userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount
         }
   );
 
@@ -56,6 +57,14 @@ const registerUser = async (req, res) => {
       name: userCreated.name,
       email: userCreated.email,
       pic: userCreated.pic,
+      userType:userCreated.userType,
+      gstNumber:userCreated.gstNumber,
+      cinNumber:userCreated.cinNumber,
+      panNumber:userCreated.panNumber, 
+      incubator_address:userCreated.incubator_address, 
+      startup_domain:userCreated.startup_domain, 
+      startup_owner:userCreated.startup_owner, 
+      investor_amount:userCreated.investor_amount,
       token: generateToken(userCreated._id, userCreated.email),
       message: "User Created Successfully",
     });
@@ -95,6 +104,14 @@ const authUser = async (req, res) => {
       name: userExists.name,
       email: userExists.email,
       pic: userExists.pic,
+      userType:userExists.userType,
+      gstNumber:userExists.gstNumber,
+      cinNumber:userExists.cinNumber,
+      panNumber:userExists.panNumber, 
+      incubator_address:userExists.incubator_address, 
+      startup_domain:userExists.startup_domain, 
+      startup_owner:userExists.startup_owner, 
+      investor_amount:userExists.investor_amount,
       token: generateToken(userExists._id, userExists.email),
       message: "Authenticated Successfully",
     });

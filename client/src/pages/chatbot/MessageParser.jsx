@@ -5,8 +5,17 @@ const MessageParser = ({ children, actions }) => {
     if (message.includes('hello')) {
         actions.handleHello();
     }
-    if (message.includes('contacts')) {
-        actions.handleContacts();
+    if (message.includes('contacts-investors')) {
+        actions.handleInvestors();
+    }
+    if (message.includes('contacts-startups')) {
+        actions.handleStartups();
+    }
+    if (message.includes('contacts-mentors')) {
+        actions.handleMentors();
+    }
+    if (message.includes('contacts-incubators')) {
+        actions.handleIncubators();
     }
     
   };

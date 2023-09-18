@@ -18,7 +18,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           messages: [...prev.messages, botMessage],
         }));
       };
-    const handleContacts = async() => {
+    const handleInvestors = async() => {
         const response = await fetch(`/api/user`, {
         // const response = await fetch(`/api/user?search=${search}`, {
             method: "GET",
@@ -27,8 +27,88 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             },
           });
           const data = await response.json();
-          console.log(data[0].email);
-        const botMessage = createChatBotMessage(`Contacts - ${data[0].name} -  ${data[0].email}, ${data[1].name} -  ${data[1].email}`);
+          console.log(data);
+          const ci = [];
+          for(let i=0;i<data.length;i++){
+            if(data[i].userType == "investor"){
+              ci.push(data[i]);
+            }
+          }
+          
+        const botMessage = createChatBotMessage(`Investors - ${ci[0].name} - ${ci[0].email}`);
+    
+        setState((prev) => ({
+          ...prev,
+          messages: [...prev.messages, botMessage],
+        }));
+      };
+    const handleStartups = async() => {
+        const response = await fetch(`/api/user`, {
+        // const response = await fetch(`/api/user?search=${search}`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+          const data = await response.json();
+          console.log(data);
+          const ci = [];
+          for(let i=0;i<data.length;i++){
+            if(data[i].userType == "startUp"){
+              ci.push(data[i]);
+            }
+          }
+          
+        const botMessage = createChatBotMessage(`Startups - ${ci[0].name} - ${ci[0].email}`);
+    
+        setState((prev) => ({
+          ...prev,
+          messages: [...prev.messages, botMessage],
+        }));
+      };
+    const handleMentors = async() => {
+        const response = await fetch(`/api/user`, {
+        // const response = await fetch(`/api/user?search=${search}`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+          const data = await response.json();
+          console.log(data);
+          const ci = [];
+          for(let i=0;i<data.length;i++){
+            if(data[i].userType == "mentor"){
+              ci.push(data[i]);
+            }
+          }
+          
+        const botMessage = createChatBotMessage(`Mentors - ${ci[0].name} - ${ci[0].email}`);
+    
+        setState((prev) => ({
+          ...prev,
+          messages: [...prev.messages, botMessage],
+        }));
+      };
+     
+    const handleIncubators = async() => {
+        const response = await fetch(`/api/user`, {
+        // const response = await fetch(`/api/user?search=${search}`, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+          const data = await response.json();
+          console.log(data);
+          const ci = [];
+          for(let i=0;i<data.length;i++){
+            if(data[i].userType == "incubator"){
+              ci.push(data[i]);
+            }
+          }
+          
+        const botMessage = createChatBotMessage(`Incubators - ${ci[0].name} - ${ci[0].email}`);
     
         setState((prev) => ({
           ...prev,
@@ -42,7 +122,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         return React.cloneElement(child, {
           actions: {
             handleHello,
-            handleContacts,
+            handleInvestors,
+            handleStartups,
+            handleMentors,
+            handleIncubators,
           },
         });
       })}
