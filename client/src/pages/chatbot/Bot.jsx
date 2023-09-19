@@ -5,6 +5,7 @@ import config from './config.js';
 import MessageParser from './MessageParser.jsx';
 import ActionProvider from './ActionProvider.jsx';
 import { useNavigate } from "react-router-dom";
+import {BiCommentDetail} from 'react-icons/bi'
 
 const Bot = () => {
   const navigate = useNavigate();
@@ -21,14 +22,14 @@ const Bot = () => {
       {/* <div style={{ borderRadius: '100%', position: 'fixed', bottom: '10px', padding: '1rem', right: '10px', backgroundColor: 'white', }}>
         <CloseIcon boxSize={5} color="red" onClick={submitHandler} />
       </div> */}
-      <div class="adminActions">
-        <input type="checkbox" name="adminToggle" class="adminToggle" />
-        <a class="adminButton" href="#!"><i class="fa fa-bars"></i></a>
-        <div class="adminButtons">
-          {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
-          <a href="/home" title="Cancel"><i class="fa fa-close"></i></a>
-          {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}
-          <a href="/chats" title="Chat"><i class="fas fa-comments"></i></a>
+      <div className="adminActions">
+        <input type="checkbox" name="adminToggle" className="adminToggle" />
+        <a className="adminButton" href="#!"><i className="fa fa-bars"></i></a>
+        <div className="adminButtons">
+          <a href="/home" title="Cancel"><i className="fa fa-close"></i></a>
+          {/* <a href="#" title="Add User"><i className="fa fa-user-plus"></i></a> */}
+          {/* <a href="/chats" title="Chat"><i className="fas fa-comments"></i></a> */}
+          <a href="/chats" title='Chat'><BiCommentDetail/></a>
         </div>
       </div>
     </div>

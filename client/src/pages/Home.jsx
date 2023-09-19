@@ -18,11 +18,13 @@ const Home = () => {
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-
+  
     if (!userInfo) {
-      navigate("/");
+      console.log("User is not logged in. Redirecting to /login");
+      navigate("/login");
     }
   }, [navigate]);
+  
 
   return (
     <Container maxWidth="xl">
