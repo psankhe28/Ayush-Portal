@@ -5,6 +5,8 @@ import panLogo from "../assets/pan.png";
 import patentLogo from "../assets/patent.png";
 import proofLogo from "../assets/proof.png";
 import eventsLogo from "../assets/events.png";
+import styled from "styled-components";
+
 const Eligibility = () => {
   const constantData = [
     {
@@ -38,6 +40,7 @@ const Eligibility = () => {
   ];
 
   return (
+    <Wrapper id="eligibility">
     <div className="px-24 bg-gray-100 py-6">
       <h1 className="text-4xl font-bold pt-16 pb-8">
         Eligibility Criteria for a Startup
@@ -99,7 +102,11 @@ const Eligibility = () => {
           Attend Events held by some of the Famous Mentors from our Portal and gain valuable knowledge on how to start a business/startup.        </h1>
       </div>
     </div>
+    </Wrapper>
   );
 };
 
 export default Eligibility;
+const Wrapper = styled.section`
+  width: 100%;
+`;
