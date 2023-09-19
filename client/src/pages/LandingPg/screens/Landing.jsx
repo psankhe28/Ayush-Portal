@@ -20,9 +20,9 @@ export default function Landing() {
       <Header />
       <Features />
       <Eligibility />
-      <Projects />
-      <Blog />
-      <Pricing />
+      {/* <Projects /> */}
+      {/* <Blog /> */}
+      {/* <Pricing /> */}
       <Contact />
       <Footer />
     </div>

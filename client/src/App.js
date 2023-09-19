@@ -20,6 +20,7 @@ import InvestorProfile from "./pages/Investor_Dashboard/Profile";
 
 import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
+import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
 function App() {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -37,6 +38,7 @@ function App() {
           <Route path="/startup/govt-schemes" element={<Schemes />} />
           <Route path="/startup/exploreWorkshop" element={<Workshop />} />
           <Route path="/startup/find-investor" element={<FindInvestor />} />
+          <Route path="/startup/mentor" element={<MentorData />} />
           <Route path="/startup/news" element={<News />} />{" "}
           <Route
             path="/incubator/createWorkshop"

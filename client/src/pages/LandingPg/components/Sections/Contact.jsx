@@ -36,15 +36,16 @@ export default function Contact() {
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
               <div style={{ width: "50%" }} className="flexNullCenter flexColumn">
                 <ContactImgBox>
-                  <img src={ContactImg1} alt="office" className="radius6" />
+                  <img src="https://uploads-ssl.webflow.com/5ef0df6b9272f7410180a013/5ef204bb10b93fdbe5e601bb_contact-2860030_1920-1024x683.jpg" alt="office" className="radius6" />
                 </ContactImgBox>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <ContactImgBox>
-                  <img src={ContactImg2} alt="office" className="radius6" />
+                  <img src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg?w=2000" alt="office" className="radius6" />
                 </ContactImgBox>
               </div>
               <div style={{ width: "50%" }}>
                 <div style={{ marginTop: "100px" }}>
-                  <img src={ContactImg3} alt="office" className="radius6" />
+                  <img src="https://previews.123rf.com/images/macrovector/macrovector1501/macrovector150100810/35957893-technical-support-call-center-contact-us-flat-vertical-banner-set-isolated-vector-illustration.jpg" alt="office" className="radius6" />
                 </div>
               </div>
             </div>

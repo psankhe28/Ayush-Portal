@@ -16,23 +16,20 @@ export default function Header() {
           <HeaderP className="text-lg	 medium">
           From raising funds to looking for guidance, we have covered you all. We aim to encompass smooth functioning of communication between investor and Entreprenuers. 
           </HeaderP>
-          <BtnWrapper>
-            <FullButton title="Get Started" />
-          </BtnWrapper>
         </div>
       </LeftSide>
       <RightSide>
         <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: 9}} />
-          <QuoteWrapper className="flexCenter darkBg radius8">
+          <Img className="radius8" src="https://startupscouncilofindia.com/img/startup1.jpg" width={400} alt="office" style={{zIndex: 9}} />
+          <QuoteWrapper className="flexLeft darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />
             </QuotesWrapper>
             <div>
               <p className="font15 whiteColor">
-                <em>Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.</em>
+                <em>The best way to predict the future is to create it..</em>
               </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Ralph Waldo Emerson</p>
+              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Peter Drucker</p>
             </div>
           </QuoteWrapper>
           <DotsWrapper>

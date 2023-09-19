@@ -8,6 +8,7 @@ import PitchDeckForm from "./PitchDeck/PitchDeckForm";
 import { HomeIcon, StatsIcon, PersonIcon } from "./components/Icons/Icons";
 import FindInvestor from "./FindInvestors/FindInvestors";
 import Workshop from "./Workshops/exploreWorkshops";
+import MentorData from "./Mentor/Mentor";
 
 var startupRoutes = [
   {
@@ -43,6 +44,13 @@ var startupRoutes = [
     icon: <PersonIcon color="inherit" />,
     secondaryNavbar: true,
     component: FindInvestor,
+  },
+  {
+    path: "/startup/mentors",
+    name: "Mentors",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: MentorData,
   },
   {
     path: "/startup/exploreWorkshop",
