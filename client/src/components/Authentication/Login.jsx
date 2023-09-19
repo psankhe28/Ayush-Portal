@@ -33,7 +33,7 @@ const Login = () => {
     // If email or password is missing
     if (!credentials.email || !credentials.password) {
       toast({
-        title: "Please Fill all the Feilds",
+        title: "Please Fill all the Fields",
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -45,7 +45,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch("/api/user/login", {
+      const response = await fetch("http://localhost:5000/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,21 @@ const Login = () => {
       if (data.success) {
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
-        navigate("/home");
+
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        if (userInfo && userInfo.userType === "startUp") {
+          navigate("/startup/dashboard");
+        } else if (userInfo && userInfo.userType === "incubator") {
+          navigate("/incubator/dashboard");
+        } else if (userInfo && userInfo.userType === "govtAgency") {
+          navigate("/yettobedone");
+        } else if (userInfo && userInfo.userType === "mentor") {
+          navigate("/yettobedone");
+        } else if (userInfo && userInfo.userType === "investor") {
+          navigate("/investor/dashboard");
+        } else {
+          navigate("/yetobedone");
+        }
       } else {
         setLoading(false);
       }
@@ -90,7 +104,9 @@ const Login = () => {
     <Stack spacing="6">
       <Stack spacing="5">
         <FormControl isRequired>
-          <FormLabel htmlFor="email" color="white">Email</FormLabel>
+          <FormLabel htmlFor="email" color="white">
+            Email
+          </FormLabel>
           <Input
             background="white"
             type="email"
@@ -104,8 +120,10 @@ const Login = () => {
 
       <Stack spacing="5">
         <FormControl isRequired>
-          <FormLabel htmlFor="password" color="white">Password</FormLabel>
-          <InputGroup background="white"> 
+          <FormLabel htmlFor="password" color="white">
+            Password
+          </FormLabel>
+          <InputGroup background="white">
             <InputRightElement w="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? "Hide" : "Show"}
@@ -143,7 +161,8 @@ const Login = () => {
         <i
           className="fas fa-user-alt"
           style={{ fontSize: "15px", marginRight: 8 }}
-        /> Get Guest User Credentials
+        />{" "}
+        Get Guest User Credentials
       </Button>
     </Stack>
   );

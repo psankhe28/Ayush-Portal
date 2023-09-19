@@ -302,7 +302,6 @@ import StartUp from "./UserBasedSignUp/StartUp";
 
 
 const Signup = () => {
-  const navigate = useNavigate();
   const [userType, setuserType] = useState("");
 
   

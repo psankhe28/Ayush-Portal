@@ -19,6 +19,7 @@ const Investor = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const [userType, setuserType] = useState("");
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   const [credentials, setCredentials] = useState({
     name: "",
@@ -133,7 +134,7 @@ const Investor = () => {
 
     // Now submit the data
     try {
-      const response = await fetch("/api/user", {
+      const response = await fetch("http://localhost:5000/api/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +168,19 @@ const Investor = () => {
       if (data.success) {
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
-        navigate("/home");
+        if (userInfo.userType === "startUp") {
+          navigate("/startup/dashboard");
+        } else if (userInfo.userType === "incubator") {
+          navigate("/incubator/dashboard");
+        } else if (userInfo.userType === "govtAgency") {
+          navigate("/yettobedone");
+        } else if (userInfo.userType === "investor") {
+          navigate("/investor/dashboard");
+        } else if (userInfo.userType === "mentor") {
+          navigate("/investor/dashboard");
+        } else {
+          navigate("/yetobedone");
+        }
       } else {
         setLoading(false);
       }
