@@ -168,19 +168,7 @@ const Investor = () => {
       if (data.success) {
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
-        if (userInfo.userType === "startUp") {
-          navigate("/startup/dashboard");
-        } else if (userInfo.userType === "incubator") {
-          navigate("/incubator/dashboard");
-        } else if (userInfo.userType === "govtAgency") {
-          navigate("/yettobedone");
-        } else if (userInfo.userType === "investor") {
           navigate("/investor/dashboard");
-        } else if (userInfo.userType === "mentor") {
-          navigate("/investor/dashboard");
-        } else {
-          navigate("/yetobedone");
-        }
       } else {
         setLoading(false);
       }

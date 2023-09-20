@@ -7,7 +7,6 @@ import Backdrop from "../Elements/Backdrop";
 // Assets
 import LogoIcon from "../../../../assets/logo.png";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
-import GoogleTranslateButton from "../../../../components/Translate/translate";
 
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
@@ -19,6 +18,7 @@ export default function TopNavbar() {
       window.removeEventListener("scroll", () => setY(window.scrollY));
     };
   }, [y]);
+
 
   return (
     <>
@@ -39,13 +39,27 @@ export default function TopNavbar() {
             <BurgerIcon />
           </BurderWrapper>
           <UlWrapper className="flexNullCenter">
-          <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="home" spy={true} smooth={true} offset={-80}>
+            <li className="semiBold font15 pointer">
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
                 Home
               </Link>
             </li>
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="services" spy={true} smooth={true} offset={-80}>
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
                 Features
               </Link>
             </li>
@@ -59,31 +73,35 @@ export default function TopNavbar() {
                 Blog
               </Link>
             </li> */}
-             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="eligibility" spy={true} smooth={true} offset={-80}>
+            <li className="semiBold font15 pointer">
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="eligibility"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
                 Eligibility Criteria
               </Link>
             </li>
             <li className="semiBold font15 pointer">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
+              <Link
+                activeClass="active"
+                style={{ padding: "10px 15px" }}
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-80}
+              >
                 Contact
               </Link>
             </li>
-            {/* <GoogleTranslateButton/> */}
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
               <a href="/login" style={{ padding: "10px 30px 10px 0" }}>
                 Log in
-              </a>
-            </li>
-            <li className="semiBold font15 pointer flexCenter">
-              <a
-                href="/register"
-                className="radius8 lightBg"
-                style={{ padding: "10px 15px" }}
-              >
-                Get Started
               </a>
             </li>
           </UlWrapperRight>

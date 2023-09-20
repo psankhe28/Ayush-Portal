@@ -24,7 +24,7 @@ const YetToBeDone = () => {
         <div className="adminButtons">
           {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
           <a href="/bot" title="Bot">
-            <FaRobot className="centered-icon" style={{margin:"auto"}} size={32}/>
+            <FaRobot style={{margin:"auto"}} size={32}/>
           </a>{" "}
           {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}
           <a href="/chats" title="Chat">

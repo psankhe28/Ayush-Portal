@@ -1,0 +1,22 @@
+#google_translate_element {
+  display: flex !important;
+  justify-content: center !important;
+  height: 100px !important;
+  margin-top: 120px !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+@media print {
+  #google_translate_element {
+    display: none !important;
+  }
+}

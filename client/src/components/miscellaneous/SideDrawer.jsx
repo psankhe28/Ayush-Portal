@@ -30,7 +30,7 @@ import ProfileModal from "./ProfileModal";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../UserAvatar/UserListItem";
 import { getSender } from "../../config/ChatLogics";
-import "../../App.css";
+import "./SideDrawer.css";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");

@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -22,8 +22,14 @@ import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
 import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
+import { FaRobot } from "react-icons/fa";
+import "./pages/YetToBeDone.css";
+
 function App() {
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const location = useLocation();
+  const shouldRenderAdminActions =
+    location.pathname !== "/login" && location.pathname !== "/";
+
   return (
     <>
       <div className="App">
@@ -49,6 +55,26 @@ function App() {
           <Route path="/bot" element={<Bot />} />
           <Route path="/yettobedone" element={<YetToBeDone />} />
         </Routes>
+        {shouldRenderAdminActions && (
+          <div className="adminActions">
+            <input type="checkbox" name="adminToggle" className="adminToggle" />
+            <a className="adminButton" href="#!">
+              <i className="fa fa-bars"></i>
+            </a>
+
+            <div className="adminButtons">
+              {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
+              <a href="/bot" title="Bot">
+                <FaRobot style={{ margin: "auto" }} size={32} />
+              </a>{" "}
+              {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}
+              <a href="/chats" title="Chat">
+                <i className="fa fa-comments"></i>
+              </a>
+              {/* <a href="/chats" title='Chat'><BiCommentDetail/></a> */}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
