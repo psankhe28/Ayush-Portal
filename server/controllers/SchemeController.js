@@ -1,5 +1,4 @@
 const schemeModel = require("../models/Schemes");
-const auth = require("../../server/utilities/auth");
 
 exports.getSchemes = async (req, res) => {
   try {
