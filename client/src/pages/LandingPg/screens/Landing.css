@@ -1,8 +1,9 @@
 #google_translate_element {
   display: flex !important;
   justify-content: center !important;
-  height: 100px !important;
+  height: 20px !important;
   margin-top: 120px !important;
+  margin-bottom: -20px !important;
 }
 
 body > .skiptranslate {
@@ -12,11 +13,17 @@ body > .skiptranslate {
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
+
 body {
   top: 0px !important;
 }
+
 @media print {
   #google_translate_element {
     display: none !important;
   }
+}
+
+.skiptranslate {
+  display: none !important;
 }
