@@ -19,7 +19,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
       };
     const handleInvestors = async() => {
-        const response = await fetch(`/api/user`, {
+        const response = await fetch(`http://localhost:5000/api/user`, {
+
         // const response = await fetch(`/api/user?search=${search}`, {
             method: "GET",
             headers: {
@@ -43,7 +44,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
       };
     const handleStartups = async() => {
-        const response = await fetch(`/api/user`, {
+        const response = await fetch(`http://localhost:5000/api/user`, {
         // const response = await fetch(`/api/user?search=${search}`, {
             method: "GET",
             headers: {
@@ -67,7 +68,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }));
       };
     const handleMentors = async() => {
-        const response = await fetch(`/api/user`, {
+        const response = await fetch(`http://localhost:5000/api/user`, {
         // const response = await fetch(`/api/user?search=${search}`, {
             method: "GET",
             headers: {
@@ -92,7 +93,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       };
      
     const handleIncubators = async() => {
-        const response = await fetch(`/api/user`, {
+        const response = await fetch(`http://localhost:5000/api/user`, {
         // const response = await fetch(`/api/user?search=${search}`, {
             method: "GET",
             headers: {

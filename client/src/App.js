@@ -1,7 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
-
+import "./a.css";
 import { Home, Chat } from "./pages";
 import YetToBeDone from "./pages/YetToBeDone";
 import Bot from "./pages/chatbot/Bot";
@@ -65,7 +64,8 @@ function App() {
             <div className="adminButtons">
               {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
               <a href="/bot" title="Bot">
-                <FaRobot style={{ margin: "auto" }} size={32} />
+              <a href="/bot" title="Bot"><i class="fa fa-robot"></i></a>
+                {/* <FaRobot style={{ margin: "auto" }} size={25} /> */}
               </a>{" "}
               {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}
               <a href="/chats" title="Chat">

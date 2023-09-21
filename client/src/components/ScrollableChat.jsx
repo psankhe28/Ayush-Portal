@@ -2,7 +2,7 @@ import { Avatar, Tooltip } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import Lottie from "lottie-react";
 
-import "../App.css";
+import "../a.css";
 import {
   isLastMessage,
   isSameSender,
