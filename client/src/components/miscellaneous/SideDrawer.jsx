@@ -73,7 +73,7 @@ const SideDrawer = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(`/api/user?search=${search}`, {
+      const response = await fetch(`http://localhost:5000/api/user?search=${search}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -101,7 +101,7 @@ const SideDrawer = () => {
     try {
       setLoadingChat(true);
 
-      const response = await fetch(`/api/chat`, {
+      const response = await fetch(`http://localhost:5000/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

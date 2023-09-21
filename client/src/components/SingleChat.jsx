@@ -41,7 +41,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     try {
       setLoading(true);
 
-      const response = await fetch(`/api/message/${selectedChat._id}`, {
+      const response = await fetch(`http://localhost:5000/api/message/${selectedChat._id}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -108,7 +108,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       try {
         setNewMessage(""); // Clear message field before making API call (won't affect API call as the function is asynchronous)
 
-        const response = await fetch("/api/message", {
+        const response = await fetch("http://localhost:5000/api/message", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${user.token}`,
