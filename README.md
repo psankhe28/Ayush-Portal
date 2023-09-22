@@ -13,6 +13,7 @@
 <summary>Table of Contents</summary>
 
 - [Description](#description)
+- [Flowchart](#flowchart)
 - [Assets](#assets)
 - [Tech Stack](#tech-stack)
 - [Team Members](#team-members)
@@ -56,7 +57,11 @@ Ayush Portal is on a mission to transform the entrepreneurial landscape in India
   </tr>
 </table>
 
-### 🔗Assets
+## 📊Flowchart
+![LoginSignup](https://github.com/psankhe28/pre-sih/assets/82211574/27fd3808-e118-4462-98a3-5b233dc79c2d)
+
+
+## 🔗Assets
 
 - [GitHub Repo](https://github.com/psankhe28/pre-sih)
 - [PPT](https://docs.google.com/presentation/d/1ib232jbuImGwqXSBhfGoWsikDvwsRh8K/edit?usp=drive_link&ouid=115976062447813507414&rtpof=true&sd=true)
