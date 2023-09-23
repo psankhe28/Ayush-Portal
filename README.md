@@ -85,6 +85,10 @@ Ayush Portal is on a mission to transform the entrepreneurial landscape in India
 
 - Finnhub API
 
+### ML
+
+- NLP
+
 ## 👩‍💻Team Members
 
 - [Pratiksha Sankhe](https://github.com/psankhe28)
