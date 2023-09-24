@@ -40,7 +40,7 @@ const Eligibility = () => {
   ];
 
   return (
-    <Wrapper id="eligibility">
+    <Wrapper id="eligibility" style={{marginTop:'-50px'}}>
       <div>
         <div className="px-24 bg-gray-100 py-6">
           <h1 className="text-4xl font-bold pt-16 pb-8">

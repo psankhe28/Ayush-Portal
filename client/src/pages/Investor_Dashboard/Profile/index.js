@@ -91,14 +91,14 @@ function Profile(props) {
         }}
       >
         <Portal>
-          <AdminNavbar
+          {/* <AdminNavbar
             onOpen={onOpen}
             logoText={"AYUSH PORTAL"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}
             {...rest}
-          />
+          /> */}
         </Portal>
         <PanelContent>
           <PanelContainer>

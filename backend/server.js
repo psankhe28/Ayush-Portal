@@ -4,8 +4,9 @@ const path = require("path");
 const cors = require("cors");
 
 const { connectToMongoDB } = require("./config");
-const { userRoutes, chatRoutes, messageRoutes } = require("./routes");
+const { userRoutes, chatRoutes, messageRoutes} = require("./routes");
 const { notFound, errorHandler } = require("./middleware");
+
 
 const app = express(); // Use express js in our app
 app.use(express.json()); // Accept JSON data

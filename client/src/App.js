@@ -21,7 +21,6 @@ import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
 import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
-import { FaRobot } from "react-icons/fa";
 import "./pages/YetToBeDone.css";
 
 function App() {
