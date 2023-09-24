@@ -13,7 +13,7 @@ import Workshop from "./pages/Startup_Dashboard/Workshops/exploreWorkshops";
 import StartupDashboard from "./pages/Startup_Dashboard/Dashboard/index";
 import StartupProfile from "./pages/Startup_Dashboard/Profile";
 import News from "./pages/Startup_Dashboard/News/News";
-
+import AIQueryBox from "./pages/prompt/AIQueryBox";
 import InvestorDashboard from "./pages/Investor_Dashboard/Dashboard/index";
 import InvestorProfile from "./pages/Investor_Dashboard/Profile";
 
@@ -32,7 +32,7 @@ function App() {
     <>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LandingPg />} />
+          {/* <Route path="/" element={<LandingPg />} /> */}
           <Route path="/login" element={<Home />} />
           <Route path="/investor/dashboard" element={<InvestorDashboard />} />
           <Route path="/investor/profile" element={<InvestorProfile />} />
@@ -52,6 +52,7 @@ function App() {
           <Route path="/chats" element={<Chat />} />
           <Route path="/bot" element={<Bot />} />
           <Route path="/yettobedone" element={<YetToBeDone />} />
+          <Route path="/" element={<AIQueryBox />} />
         </Routes>
         {shouldRenderAdminActions && (
           <div className="adminActions">
@@ -63,7 +64,9 @@ function App() {
             <div className="adminButtons">
               {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
               <a href="/bot" title="Bot">
-              <a href="/bot" title="Bot"><i class="fa fa-robot"></i></a>
+                <a href="/bot" title="Bot">
+                  <i class="fa fa-robot"></i>
+                </a>
                 {/* <FaRobot style={{ margin: "auto" }} size={25} /> */}
               </a>{" "}
               {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}

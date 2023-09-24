@@ -4,9 +4,8 @@ const path = require("path");
 const cors = require("cors");
 
 const { connectToMongoDB } = require("./config");
-const { userRoutes, chatRoutes, messageRoutes} = require("./routes");
+const { userRoutes, chatRoutes, messageRoutes, aiRoutes } = require("./routes");
 const { notFound, errorHandler } = require("./middleware");
-
 
 const app = express(); // Use express js in our app
 app.use(express.json()); // Accept JSON data
@@ -14,13 +13,14 @@ dotenv.config({ path: path.join(__dirname, "./.env") }); // Specify a custom pat
 connectToMongoDB(); // Connect to Database
 var corsOptions = {
   origin: "*",
-  optionsSuccessStatus: 200 // For legacy browser support
+  optionsSuccessStatus: 200, // For legacy browser support
 };
 
 app.use(cors(corsOptions));
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
+app.use("/api/ai", aiRoutes);
 
 // --------------------------DEPLOYMENT------------------------------
 
