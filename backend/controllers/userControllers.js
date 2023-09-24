@@ -42,28 +42,30 @@ const registerUser = async (req, res) => {
     });
   }
 
-  // Verify GST number
-  const gstVerificationResult = await verifyGST(gstNumber);
+  // Verify GST number if not empty
+  if (gstNumber !== "") {
+    const gstVerificationResult = await verifyGST(gstNumber);
 
-  if (gstVerificationResult.error) {
-    // Handle GST verification error
-    return res.status(400).json({
-      success: false,
-      statusCode: 400,
-      message: gstVerificationResult.message,
-    });
-  }
+    if (gstVerificationResult.error) {
+      // Handle GST verification error
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: gstVerificationResult.message,
+      });
+    }
 
-  // Check PAN number and name
-  if (
-    gstVerificationResult.taxpayerInfo.panNo !== panNumber ||
-    gstVerificationResult.taxpayerInfo.lgnm !== name
-  ) {
-    return res.status(400).json({
-      success: false,
-      statusCode: 400,
-      message: "PAN number or name does not match GST details",
-    });
+    // Check PAN number and name
+    if (
+      gstVerificationResult.taxpayerInfo.panNo !== panNumber ||
+      gstVerificationResult.taxpayerInfo.lgnm !== name
+    ) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: "PAN number or name does not match GST details",
+      });
+    }
   }
 
   // Register and store the new user
