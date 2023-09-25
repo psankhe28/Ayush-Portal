@@ -209,67 +209,67 @@ export default function Pitch(props) {
           />
         </Portal>
         <PanelContent>
-          <PanelContainer style={{ marginTop: "50px" }}>
-              <div
+           <PanelContainer style={{ marginTop: "50px" }}>
+            <div
+              style={{
+                maxWidth: "80%",
+                margin: "auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <h1
                 style={{
-                  maxWidth: "50%",
-                  margin: "auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
+                  fontSize: "30px",
+                  margin: "4%",
+                  fontWeight: "bold",
+                  color: "#000",
                 }}
               >
-                <h1
-                  style={{
-                    fontSize: "30px",
-                    margin: "4%",
-                    fontWeight: "bold",
-                    color: "#000",
-                  }}
-                >
-                  Pitch Deck Details
-                </h1>
-                <div
-                  style={{
-                    backgroundColor: "#e3e3e3", // Add your desired background color
-                    padding: "16px",
-                    borderRadius: "8px", // Add your desired border radius
-                    boxShadow: "0 0 5px rgba(0, 0, 0, 0.3)", // Add your desired box shadow
-                    width: "100%",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {Object.entries(formSections).map(([key, value]) => (
-                    <div className="my-4">
-                      <h1 className="text-2xl font-semibold">{key} :</h1>
-                      {value.map((field, index) =>
-                        Array.isArray(field) ? (
-                          <MultipleFields key={index} field={field} />
-                        ) : (
-                          <div className="flex items-end gap-2" key={field}>
-                            <h1 className="text-lg">{fields[field].title} :</h1>
-                            <input
-                              type="text"
-                              required
-                              value={formData[fields[field].id]}
-                              onChange={(e) =>
-                                dispatch(
-                                  updatePitch([
-                                    fields[field].id,
-                                    e.target.value,
-                                  ])
-                                )
-                              }
-                              className="text-input"
-                            />
-                          </div>
-                        )
-                      )}
-                    </div>
-                  ))}
-                </div>
-                <PitchDeck />
+                Pitch Deck Details
+              </h1>
+              <div
+                style={{
+                  backgroundColor: "#eee",
+                  padding: "16px",
+                  borderRadius: "8px",
+                  boxShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
+                  width: "100%",
+                  marginBottom: "20px",
+                }}
+              >
+                {Object.entries(formSections).map(([key, value]) => (
+                  <div className="my-4" key={key}>
+                    <h1 className="text-2xl font-semibold">{key} :</h1>
+                    {value.map((field, index) =>
+                      Array.isArray(field) ? (
+                        <MultipleFields key={index} field={field} />
+                      ) : (
+                        <div className="flex items-end gap-2" key={field}>
+                          <h1 className="text-lg">{fields[field].title} :</h1>
+                          <input
+                            type="text"
+                            required
+                            value={formData[fields[field].id]}
+                            onChange={(e) =>
+                              dispatch(
+                                updatePitch([
+                                  fields[field].id,
+                                  e.target.value,
+                                ])
+                              )
+                            }
+                            className="w-auto px-2 py-1 border border-gray-300 rounded"
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
+                ))}
               </div>
+              <PitchDeck />
+            </div>
           </PanelContainer>
         </PanelContent>
       </MainPanel>

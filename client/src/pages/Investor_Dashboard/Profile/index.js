@@ -32,13 +32,14 @@ function Profile(props) {
   useEffect(() => {
     const generateAIImage = async () => {
       try {
-        const response = await axios.post("/api/image", {
+        const response = await axios.post("http://localhost:5000/api/image", {
           prompt: `a investor named ${userInfo.name}`,
           size: "1024x1024",
         });
 
         const imageUrl = response.data.imageUrl;
         setAvatarImage(imageUrl);
+        console.log(imageUrl)
       } catch (error) {
         console.error("Error generating AI image:", error);
       }
@@ -91,7 +92,7 @@ function Profile(props) {
                 ]}
               />
               <Grid
-                templateColumns={{ sm: "1fr", xl: "repeat(3, 1fr)" }}
+                templateColumns={{ sm: "1fr", xl: "repeat(3, 1fr)"   }}
                 gap="22px"
               >
                 <ProfileInformation
@@ -100,11 +101,10 @@ function Profile(props) {
                     "Hi, I’m Esthera Jackson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
                   }
                   name={userInfo.name}
-                  mobile={"(44) 123 1234 123"}
                   email={userInfo.email}
                   location={"India"}
                 />
-                <Conversations title={"Conversations"} />
+                {/* <Conversations title={"Conversations"} /> */}
               </Grid>
             </Flex>
           </PanelContainer>

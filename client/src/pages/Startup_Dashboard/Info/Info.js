@@ -1,7 +1,5 @@
-// Chakra imports
-import {Grid } from "@chakra-ui/react";
+import i1 from "../assets/info.png";
 import React, { useState } from "react";
-import { schemes } from "./schemes";
 import theme from "../../../utils/theme/theme";
 import { ChakraProvider, Portal, useDisclosure } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
@@ -10,13 +8,12 @@ import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
 import AdminNavbar from "../components/Navbars/AdminNavbar.js";
-import Card from "../../../components/Schemes/SchemeCard";
 
-export default function Schemes(props) {
+export default function Info(props) {
   const { ...rest } = props;
   const [sidebarVariant, setSidebarVariant] = useState("transparent");
   const [fixed, setFixed] = useState(false);
-  const { onOpen } = useDisclosure();
+  const {onOpen} = useDisclosure();
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
@@ -87,18 +84,10 @@ export default function Schemes(props) {
           />
         </Portal>
         <PanelContent>
-          <PanelContainer style={{ marginTop: "50px" }}>
-            <Grid templateColumns="repeat(3, 1fr)" gap={3}>
-              {schemes.map((scheme, index) => (
-                <Card
-                  key={index}
-                  title={scheme.title}
-                  description={scheme.description}
-                  tagName={scheme.tagName}
-                  path={scheme.path}
-                />
-              ))}
-            </Grid>
+          <PanelContainer style={{ marginTop: "100px" }}>
+            <div>
+              <img src={i1} alt="" />
+            </div>
           </PanelContainer>
         </PanelContent>
       </MainPanel>

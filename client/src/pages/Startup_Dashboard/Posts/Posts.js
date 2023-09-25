@@ -1,7 +1,5 @@
-// Chakra imports
-import {Grid } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { schemes } from "./schemes";
+import axios from "axios"; // Import axios
+import React, { useState, useEffect } from "react";
 import theme from "../../../utils/theme/theme";
 import { ChakraProvider, Portal, useDisclosure } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
@@ -10,13 +8,13 @@ import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
 import AdminNavbar from "../components/Navbars/AdminNavbar.js";
-import Card from "../../../components/Schemes/SchemeCard";
 
-export default function Schemes(props) {
+export default function Posts(props) {
   const { ...rest } = props;
   const [sidebarVariant, setSidebarVariant] = useState("transparent");
   const [fixed, setFixed] = useState(false);
   const { onOpen } = useDisclosure();
+
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
@@ -61,6 +59,17 @@ export default function Schemes(props) {
     }
     return activeNavbar;
   };
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    // Fetch posts from your backend API
+    axios.get("http://localhost:8000/api/posts").then((response) => {
+      setPosts(response.data.data);
+      console.log(response.data.data);
+    });
+  }, []);
+
   return (
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
@@ -87,18 +96,31 @@ export default function Schemes(props) {
           />
         </Portal>
         <PanelContent>
-          <PanelContainer style={{ marginTop: "50px" }}>
-            <Grid templateColumns="repeat(3, 1fr)" gap={3}>
-              {schemes.map((scheme, index) => (
-                <Card
-                  key={index}
-                  title={scheme.title}
-                  description={scheme.description}
-                  tagName={scheme.tagName}
-                  path={scheme.path}
-                />
-              ))}
-            </Grid>
+          <PanelContainer className="mt-10">
+            <div className="container mx-auto mt-8">
+              <h1 className="text-2xl font-semibold mb-4 mt-8 text-center">Posts</h1>
+              <ul>
+                {posts.map((post) => (
+                  <li
+                    key={post.id}
+                    className="mb-8 p-6 bg-white shadow-md rounded-lg"
+                  >
+                    <h2 className="text-xl font-semibold mb-4">{post.title}</h2>
+                    <p className="text-gray-700 mb-4">{post.text}</p>
+                    <div className="w-full h-48 overflow-hidden rounded-lg">
+                      <img
+                        src={post.photoUrl}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />{" "}
+                    </div>
+                    {/* <p className="text-gray-500 mt-4">
+                      Category: {post.category}
+                    </p> */}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </PanelContainer>
         </PanelContent>
       </MainPanel>

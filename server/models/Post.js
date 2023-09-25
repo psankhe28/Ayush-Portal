@@ -33,7 +33,7 @@ const postSchema = new mongoose.Schema({
         ref: 'Comment'
     }],
     photoUrl: {
-        type: String
+        type: String 
     },
     displayRank:{
         type: String,
@@ -44,6 +44,7 @@ const postSchema = new mongoose.Schema({
         ref: 'User',
     }
 });
+
 
 const Comment = mongoose.model('Comment', commentSchema);
 const Post = mongoose.model('Post', postSchema);
