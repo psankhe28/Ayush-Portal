@@ -3,7 +3,7 @@ const axios = require("axios");
 const OpenAI = require("openai");
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.API_KEY,
 });
 
 const promptMessage = async (req, res) => {
