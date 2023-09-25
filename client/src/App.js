@@ -34,7 +34,11 @@ function App() {
       
       <div className="App">
         <Routes>
+<<<<<<< HEAD
+          <Route path="/" element={<Home />} />
+=======
           {/* <Route path="/" element={<LandingPg />} /> */}
+>>>>>>> 00d66ab7b4365e6d5d0367e7e4b425a6c034886a
           <Route path="/login" element={<Home />} />
           <Route path="/investor/dashboard" element={<InvestorDashboard />} />
           <Route path="/investor/profile" element={<InvestorProfile />} />
