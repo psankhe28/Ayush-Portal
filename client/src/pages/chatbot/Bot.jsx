@@ -10,10 +10,10 @@ import {BiCommentDetail} from 'react-icons/bi'
 const Bot = () => {
   const navigate = useNavigate();
   const submitHandler = () => {
-    navigate("/home");
+    navigate("/");
   }
   return (
-    <div style={{margin:'auto'}}>
+    <div style={{ display:'flex',justifyContent:'center', marginTop:'3rem'}}>
       <Chatbot
         config={config}
         messageParser={MessageParser}

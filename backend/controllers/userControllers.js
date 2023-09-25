@@ -4,12 +4,23 @@ const {
   generateHashedPassword,
   verifyPassword,
 } = require("../config");
+const { verifyGST } = require("../middleware");
 
-// @description     Register new user
-// @route           POST /api/user/
-// @access          Public
 const registerUser = async (req, res) => {
-  const { name, email, password, pic,userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount } = req.body;
+  const {
+    name,
+    email,
+    password,
+    pic,
+    userType,
+    gstNumber,
+    cinNumber,
+    panNumber,
+    incubator_address,
+    startup_domain,
+    startup_owner,
+    investor_amount,
+  } = req.body;
 
   // Check if any of them is undefined
   if (!name || !email || !password) {
@@ -31,6 +42,32 @@ const registerUser = async (req, res) => {
     });
   }
 
+  // Verify GST number if not empty
+  if (gstNumber !== "") {
+    const gstVerificationResult = await verifyGST(gstNumber);
+
+    if (gstVerificationResult.error) {
+      // Handle GST verification error
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: gstVerificationResult.message,
+      });
+    }
+
+    // Check PAN number and name
+    if (
+      gstVerificationResult.taxpayerInfo.panNo !== panNumber ||
+      gstVerificationResult.taxpayerInfo.lgnm !== name
+    ) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: "PAN number or name does not match GST details",
+      });
+    }
+  }
+
   // Register and store the new user
   const userCreated = await User.create(
     // If there is no picture present, remove 'pic'
@@ -39,13 +76,28 @@ const registerUser = async (req, res) => {
           name,
           email,
           password: await generateHashedPassword(password),
-          userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount
+          userType,
+          gstNumber,
+          cinNumber,
+          panNumber,
+          incubator_address,
+          startup_domain,
+          startup_owner,
+          investor_amount,
         }
       : {
           name,
           email,
           password: await generateHashedPassword(password),
-          pic,userType, gstNumber, cinNumber, panNumber, incubator_address, startup_domain, startup_owner, investor_amount
+          pic,
+          userType,
+          gstNumber,
+          cinNumber,
+          panNumber,
+          incubator_address,
+          startup_domain,
+          startup_owner,
+          investor_amount,
         }
   );
 
@@ -57,14 +109,14 @@ const registerUser = async (req, res) => {
       name: userCreated.name,
       email: userCreated.email,
       pic: userCreated.pic,
-      userType:userCreated.userType,
-      gstNumber:userCreated.gstNumber,
-      cinNumber:userCreated.cinNumber,
-      panNumber:userCreated.panNumber, 
-      incubator_address:userCreated.incubator_address, 
-      startup_domain:userCreated.startup_domain, 
-      startup_owner:userCreated.startup_owner, 
-      investor_amount:userCreated.investor_amount,
+      userType: userCreated.userType,
+      gstNumber: userCreated.gstNumber,
+      cinNumber: userCreated.cinNumber,
+      panNumber: userCreated.panNumber,
+      incubator_address: userCreated.incubator_address,
+      startup_domain: userCreated.startup_domain,
+      startup_owner: userCreated.startup_owner,
+      investor_amount: userCreated.investor_amount,
       token: generateToken(userCreated._id, userCreated.email),
       message: "User Created Successfully",
     });
@@ -104,14 +156,14 @@ const authUser = async (req, res) => {
       name: userExists.name,
       email: userExists.email,
       pic: userExists.pic,
-      userType:userExists.userType,
-      gstNumber:userExists.gstNumber,
-      cinNumber:userExists.cinNumber,
-      panNumber:userExists.panNumber, 
-      incubator_address:userExists.incubator_address, 
-      startup_domain:userExists.startup_domain, 
-      startup_owner:userExists.startup_owner, 
-      investor_amount:userExists.investor_amount,
+      userType: userExists.userType,
+      gstNumber: userExists.gstNumber,
+      cinNumber: userExists.cinNumber,
+      panNumber: userExists.panNumber,
+      incubator_address: userExists.incubator_address,
+      startup_domain: userExists.startup_domain,
+      startup_owner: userExists.startup_owner,
+      investor_amount: userExists.investor_amount,
       token: generateToken(userExists._id, userExists.email),
       message: "Authenticated Successfully",
     });

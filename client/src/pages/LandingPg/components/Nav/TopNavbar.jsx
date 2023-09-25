@@ -8,17 +8,20 @@ import Backdrop from "../Elements/Backdrop";
 import LogoIcon from "../../../../assets/logo.png";
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 
+import { useNavigate } from "react-router-dom";
 export default function TopNavbar() {
   const [y, setY] = useState(window.scrollY);
   const [sidebarOpen, toggleSidebar] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     window.addEventListener("scroll", () => setY(window.scrollY));
     return () => {
       window.removeEventListener("scroll", () => setY(window.scrollY));
     };
   }, [y]);
-
+  const submitHandler = async () => {
+    navigate("/login");
+  };
 
   return (
     <>
@@ -100,9 +103,10 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer">
-              <a href="/login" style={{ padding: "10px 30px 10px 0" }}>
+              <button onClick={() => submitHandler()}>Log in</button>
+              {/* <a href="/login" style={{ padding: "10px 30px 10px 0" }}>
                 Log in
-              </a>
+              </a> */}
             </li>
           </UlWrapperRight>
         </NavInner>
