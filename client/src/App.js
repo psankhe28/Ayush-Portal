@@ -20,7 +20,7 @@ import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
 import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
-import AIQueryBox from "./pages/prompt/AIQueryBox";
+import AIQueryBox from "./pages/Prompt/AIQueryBox";
 
 import "./pages/YetToBeDone.css";
 
