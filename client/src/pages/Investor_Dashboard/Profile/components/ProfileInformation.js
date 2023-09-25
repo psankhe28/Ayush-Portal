@@ -1,17 +1,15 @@
 // Chakra imports
-import { Flex, Icon, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
 // Custom components
 import Card from "../../components/Card/Card";
 import CardBody from "../../components/Card/CardBody";
 import CardHeader from "../../components/Card/CardHeader";
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const ProfileInformation = ({
   title,
   description,
   name,
-  mobile,
   email,
   location,
 }) => {
@@ -40,14 +38,6 @@ const ProfileInformation = ({
           </Flex>
           <Flex align='center' mb='18px'>
             <Text fontSize='md' color={textColor} fontWeight='bold' me='10px'>
-              Mobile:{" "}
-            </Text>
-            <Text fontSize='md' color='gray.500' fontWeight='400'>
-              {mobile}
-            </Text>
-          </Flex>
-          <Flex align='center' mb='18px'>
-            <Text fontSize='md' color={textColor} fontWeight='bold' me='10px'>
               Email:{" "}
             </Text>
             <Text fontSize='md' color='gray.500' fontWeight='400'>
@@ -62,7 +52,7 @@ const ProfileInformation = ({
               {location}
             </Text>
           </Flex>
-          <Flex align='center' mb='18px'>
+          {/* <Flex align='center' mb='18px'>
             <Text fontSize='md' color={textColor} fontWeight='bold' me='10px'>
               Social Media:{" "}
             </Text>
@@ -92,7 +82,7 @@ const ProfileInformation = ({
                 <Icon as={FaTwitter} />
               </Link>
             </Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
       </CardBody>
     </Card>

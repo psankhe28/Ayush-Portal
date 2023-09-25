@@ -22,6 +22,7 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 app.use("/api/ai", aiRoutes);
 app.use("/api/image", imageRoutes);
+
 // --------------------------DEPLOYMENT------------------------------
 
 if (process.env.NODE_ENV === "production") {

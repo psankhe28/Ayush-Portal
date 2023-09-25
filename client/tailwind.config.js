@@ -10,7 +10,8 @@ module.exports = {
         'purple-gray-600': '#604E9E',
         'purple-gray-700': '#7B1FA2',
         'light-blue' : '#DAF0F4',
-        'blue' : '#2eb6b8',
+        // 'blue' : '#2eb6b8',
+        'blue':'#7620FF'
       },
     }
   },

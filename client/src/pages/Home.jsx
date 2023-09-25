@@ -30,7 +30,7 @@ const Home = () => {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="transparent"
+        bg="https://bsmedia.business-standard.com/_media/bs/img/misc/2022-12/08/full/pm-modi-1670510641-43153510.jpg?im=FeatureCrop,size=(1200,900)"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"

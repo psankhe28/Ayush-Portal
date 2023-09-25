@@ -9,6 +9,8 @@ import { HomeIcon, StatsIcon, PersonIcon } from "./components/Icons/Icons";
 import FindInvestor from "./FindInvestors/FindInvestors";
 import Workshop from "./Workshops/exploreWorkshops";
 import MentorData from "./Mentor/Mentor";
+import Post from './CreatePost/Post'
+import info from "./Info/Info";
 
 var startupRoutes = [
   {
@@ -16,6 +18,13 @@ var startupRoutes = [
     name: "Dashboard",
     icon: <HomeIcon color="inherit" />,
     component: Dashboard,
+  },
+  {
+    path: "/startup/guide",
+    name: "Guidance",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: info,
   },
   {
     path: "/startup/profile",
@@ -39,6 +48,20 @@ var startupRoutes = [
     component: PitchDeckForm,
   },
   {
+    path: "/startup/create-posts",
+    name: "Posts",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Post,
+  },
+  {
+    path: "/startup/posts",
+    name: "View Posts",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Post,
+  },
+  {
     path: "/startup/find-investor",
     name: "Find Investor",
     icon: <PersonIcon color="inherit" />,
@@ -46,7 +69,7 @@ var startupRoutes = [
     component: FindInvestor,
   },
   {
-    path: "/startup/mentors",
+    path: "/startup/mentor",
     name: "Mentors",
     icon: <PersonIcon color="inherit" />,
     secondaryNavbar: true,

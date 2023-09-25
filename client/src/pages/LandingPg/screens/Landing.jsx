@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import TopNavbar from "../components/Nav/TopNavbar";
-import Header from "../components/Sections/Header";
 import Features from "../components/Sections/Features";
 import Contact from "../components/Sections/Contact";
 import Footer from "../components/Sections/Footer";
-import Pricing from "../components/Sections/Pricing";
 import Blog from "../components/Sections/Blog";
 import Projects from "../components/Sections/Projects";
 import Eligibility from "../components/Sections/Eligibility";
@@ -59,8 +57,8 @@ export default function Landing() {
       {/* <Header /> */}
       <Features />
       <Eligibility />
-      <Projects />
-      <Blog />
+      {/* <Projects />
+      <Blog /> */}
       <Contact />
       <Footer />
     </div>
