@@ -8,6 +8,7 @@ import Pricing from "../components/Sections/Pricing";
 import Blog from "../components/Sections/Blog";
 import Projects from "../components/Sections/Projects";
 import Eligibility from "../components/Sections/Eligibility";
+import Carousel from "../components/Sections/Carousel";
 import "./Landing.css";
 
 export default function Landing() {
@@ -17,7 +18,7 @@ export default function Landing() {
         {
           pageLanguage: "en",
           includedLanguages: "en,hi,bn,ta,te,kn,ml,gu,mr,pa,ur",
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
         },
         "google_translate_element"
       );
@@ -50,8 +51,9 @@ export default function Landing() {
       style={{ display: "flex", flexDirection: "column" }}
     >
       <TopNavbar />
-      <div id="google_translate_element"></div>
-      <Header />
+      {/* <div id="google_translate_element"></div> */}
+      <Carousel/>
+      {/* <Header /> */}
       <Features />
       <Eligibility />
       <Projects />

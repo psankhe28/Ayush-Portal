@@ -31,6 +31,7 @@ function App() {
 
   return (
     <>
+      
       <div className="App">
         <Routes>
           {/* <Route path="/" element={<LandingPg />} /> */}
@@ -54,7 +55,7 @@ function App() {
           <Route path="/bot" element={<Bot />} />
           <Route path="/prompt" element={<AIQueryBox />} />
           <Route path="/yettobedone" element={<YetToBeDone />} />
-          <Route path="/" element={<AIQueryBox />} />
+          <Route path="/ai" element={<AIQueryBox />} />
         </Routes>
         {shouldRenderAdminActions && (
           <div className="adminActions">

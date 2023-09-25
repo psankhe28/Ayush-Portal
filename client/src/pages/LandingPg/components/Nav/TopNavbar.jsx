@@ -33,6 +33,12 @@ export default function TopNavbar() {
       >
         <NavInner className="container flexSpaceCenter">
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
+            <img
+              src="https://cdn.expresspharma.in/wp-content/uploads/2019/07/23170458/Ministry-of-AYUSH-logo-1-3.jpg"
+              width="80"
+              height="10"
+              alt=""
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <img src={LogoIcon} alt="" width="80" height="10" />
           </Link>
           <BurderWrapper

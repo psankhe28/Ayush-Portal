@@ -5,6 +5,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.1",
+    "@chakra-ui/slider": "^2.1.0",
     "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/memoize": "^0.8.1",
     "@emotion/react": "^11.11.1",
@@ -58,6 +59,7 @@
     "react-pptx": "^2.20.1",
     "react-pro-sidebar": "^0.7.1",
     "react-redux": "^8.0.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
