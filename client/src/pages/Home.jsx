@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import DialogEn from "./Homechatbot/DialogEn";
 import { Login, Signup } from "../components";
 
 const Home = () => {
@@ -27,7 +26,6 @@ const Home = () => {
 
   return (
     <Container maxWidth="xl">
-      <DialogEn />
       <Box
         d="flex"
         justifyContent="center"

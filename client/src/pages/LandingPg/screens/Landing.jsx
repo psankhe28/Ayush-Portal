@@ -9,6 +9,8 @@ import Blog from "../components/Sections/Blog";
 import Projects from "../components/Sections/Projects";
 import Eligibility from "../components/Sections/Eligibility";
 import Carousel from "../components/Sections/Carousel";
+import DialogEn from "../../Homechatbot/DialogEn";
+
 import "./Landing.css";
 
 export default function Landing() {
@@ -50,6 +52,7 @@ export default function Landing() {
       className="landing"
       style={{ display: "flex", flexDirection: "column" }}
     >
+      <DialogEn />
       <TopNavbar />
       {/* <div id="google_translate_element"></div> */}
       <Carousel/>
