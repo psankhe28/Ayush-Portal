@@ -21,6 +21,8 @@ import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
 import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
+import AIQueryBox from "./pages/Prompt/AIQueryBox";
+
 import "./pages/YetToBeDone.css";
 
 function App() {
@@ -51,6 +53,7 @@ function App() {
           <Route path="/posts" element={<Post />} />
           <Route path="/chats" element={<Chat />} />
           <Route path="/bot" element={<Bot />} />
+          <Route path="/prompt" element={<AIQueryBox />} />
           <Route path="/yettobedone" element={<YetToBeDone />} />
         </Routes>
         {shouldRenderAdminActions && (

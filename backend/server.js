@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 
 const { connectToMongoDB } = require("./config");
-const { userRoutes, chatRoutes, messageRoutes} = require("./routes");
+const { userRoutes, chatRoutes, messageRoutes, imageRoutes,aiRoutes} = require("./routes");
 const { notFound, errorHandler } = require("./middleware");
 
 
@@ -21,6 +21,8 @@ app.use(cors(corsOptions));
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
+app.use("/api/image", imageRoutes);
+app.use("/api/ai", aiRoutes);
 
 // --------------------------DEPLOYMENT------------------------------
 

@@ -19,7 +19,6 @@ const Investor = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const [userType, setuserType] = useState("");
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   const [credentials, setCredentials] = useState({
     name: "",
