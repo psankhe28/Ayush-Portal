@@ -13,7 +13,6 @@ import Workshop from "./pages/Startup_Dashboard/Workshops/exploreWorkshops";
 import StartupDashboard from "./pages/Startup_Dashboard/Dashboard/index";
 import StartupProfile from "./pages/Startup_Dashboard/Profile";
 import News from "./pages/Startup_Dashboard/News/News";
-
 import InvestorDashboard from "./pages/Investor_Dashboard/Dashboard/index";
 import InvestorProfile from "./pages/Investor_Dashboard/Profile";
 
@@ -21,7 +20,7 @@ import CreateWorkshop from "./pages/CreateWorkshop/CreateWorkshop";
 import Post from "./components/Post/Post";
 import MentorData from "./pages/Startup_Dashboard/Mentor/Mentor";
 
-import AIQueryBox from "./pages/Prompt/AIQueryBox";
+import AIQueryBox from "./pages/prompt/AIQueryBox";
 
 import "./pages/YetToBeDone.css";
 
@@ -34,7 +33,7 @@ function App() {
     <>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LandingPg />} />
+          {/* <Route path="/" element={<LandingPg />} /> */}
           <Route path="/login" element={<Home />} />
           <Route path="/investor/dashboard" element={<InvestorDashboard />} />
           <Route path="/investor/profile" element={<InvestorProfile />} />
@@ -55,6 +54,7 @@ function App() {
           <Route path="/bot" element={<Bot />} />
           <Route path="/prompt" element={<AIQueryBox />} />
           <Route path="/yettobedone" element={<YetToBeDone />} />
+          <Route path="/" element={<AIQueryBox />} />
         </Routes>
         {shouldRenderAdminActions && (
           <div className="adminActions">
@@ -66,7 +66,9 @@ function App() {
             <div className="adminButtons">
               {/* <a href="/chats" title="Add Company"><i class="fas fa-comments"></i></a> */}
               <a href="/bot" title="Bot">
-              <a href="/bot" title="Bot"><i class="fa fa-robot"></i></a>
+                <a href="/bot" title="Bot">
+                  <i class="fa fa-robot"></i>
+                </a>
                 {/* <FaRobot style={{ margin: "auto" }} size={25} /> */}
               </a>{" "}
               {/* <a href="#" title="Add User"><i class="fa fa-user-plus"></i></a> */}

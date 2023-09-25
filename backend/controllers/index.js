@@ -8,7 +8,6 @@ const {
   removeFromGroup,
 } = require("./chatControllers");
 const { sendMessage, allMessages } = require("./messageControllers");
-const { generateImage } = require("./imageControllers");
 const { promptMessage } = require("./promptControllers");
 
 module.exports = {

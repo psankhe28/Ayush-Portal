@@ -24,4 +24,5 @@ const promptMessage = async (req, res) => {
     res.status(400).json({ message: e.message });
   }
 };
+
 module.exports = promptMessage;
