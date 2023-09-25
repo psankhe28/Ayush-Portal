@@ -32,9 +32,10 @@ function App() {
 
   return (
     <>
+      
       <div className="App">
         <Routes>
-          <Route path="/" element={<LandingPg />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Home />} />
           <Route path="/investor/dashboard" element={<InvestorDashboard />} />
           <Route path="/investor/profile" element={<InvestorProfile />} />

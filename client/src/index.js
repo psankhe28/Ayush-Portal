@@ -11,6 +11,7 @@ import ChatProvider from "./context/ChatProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  
   <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider theme={theme} resetCss={false}>
