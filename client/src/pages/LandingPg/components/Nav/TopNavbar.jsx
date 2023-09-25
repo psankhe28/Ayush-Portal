@@ -38,7 +38,8 @@ export default function TopNavbar() {
               width="80"
               height="10"
               alt=""
-            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <img src={LogoIcon} alt="" width="80" height="10" />
           </Link>
           <BurderWrapper
@@ -105,6 +106,15 @@ export default function TopNavbar() {
               >
                 Contact
               </Link>
+            </li>
+            <li className="semiBold font15 pointer">
+            <a
+            href="https://creator.us.uneeq.io/try/7254fa33-6a73-4102-9c95-52d36f4641e7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Virtual mentor
+          </a>
             </li>
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">

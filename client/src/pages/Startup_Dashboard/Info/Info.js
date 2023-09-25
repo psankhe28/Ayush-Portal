@@ -7,13 +7,12 @@ import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 
 export default function Info(props) {
   const { ...rest } = props;
   const [sidebarVariant, setSidebarVariant] = useState("transparent");
   const [fixed, setFixed] = useState(false);
-  const {onOpen} = useDisclosure();
+  const { onOpen } = useDisclosure();
   const getActiveRoute = (routes) => {
     let activeRoute = "Default Brand Text";
     for (let i = 0; i < routes.length; i++) {
@@ -73,16 +72,6 @@ export default function Info(props) {
           xl: "calc(100% - 275px)",
         }}
       >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"AYUSH PORTAL"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
         <PanelContent>
           <PanelContainer style={{ marginTop: "100px" }}>
             <div>

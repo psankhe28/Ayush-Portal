@@ -89,5 +89,12 @@ var startupRoutes = [
     secondaryNavbar: true,
     component: Profile,
   },
+  {
+    path: "/startup/news",
+    name: "News",
+    icon: <PersonIcon color="inherit" />,
+    secondaryNavbar: true,
+    component: Profile,
+  },
 ];
 export default startupRoutes;

@@ -51,8 +51,8 @@ export default function Landing() {
       style={{ display: "flex", flexDirection: "column" }}
     >
       <DialogEn />
+      <div id="google_translate_element"></div>
       <TopNavbar />
-      {/* <div id="google_translate_element"></div> */}
       <Carousel/>
       {/* <Header /> */}
       <Features />

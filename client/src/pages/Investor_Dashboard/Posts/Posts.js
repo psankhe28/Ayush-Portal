@@ -7,7 +7,6 @@ import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 
 export default function Posts(props) {
   const { ...rest } = props;
@@ -85,16 +84,6 @@ export default function Posts(props) {
           xl: "calc(100% - 275px)",
         }}
       >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"AYUSH PORTAL"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
         <PanelContent>
           <PanelContainer className="mt-10">
             <div className="container mx-auto mt-8">

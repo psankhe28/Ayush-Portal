@@ -8,7 +8,6 @@ import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import { useSelector, useDispatch } from "react-redux";
 import { removeTile, updatePitch } from "./app/pitchdeckSlice";
 import { formSections, fields } from "./app/pitchdeckFields";
@@ -198,16 +197,6 @@ export default function Pitch(props) {
           xl: "calc(100% - 275px)",
         }}
       >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"AYUSH PORTAL"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
         <PanelContent>
            <PanelContainer style={{ marginTop: "50px" }}>
             <div

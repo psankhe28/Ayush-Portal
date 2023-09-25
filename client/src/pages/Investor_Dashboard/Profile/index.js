@@ -15,7 +15,6 @@ import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import theme from "../../../utils/theme/theme";
 import axios from "axios";
 

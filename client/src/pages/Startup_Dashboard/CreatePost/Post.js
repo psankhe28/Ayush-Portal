@@ -7,7 +7,6 @@ import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import { useToast } from "@chakra-ui/react";
 
 export default function CreatePostForm(props) {
@@ -132,16 +131,6 @@ export default function CreatePostForm(props) {
           xl: "calc(100% - 275px)",
         }}
       >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"AYUSH PORTAL"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
         <PanelContent>
           <PanelContainer style={{ marginTop: "100px" }}>
             <div className="container mx-auto mt-8">

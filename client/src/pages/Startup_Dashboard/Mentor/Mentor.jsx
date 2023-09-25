@@ -1,15 +1,23 @@
-// Chakra imports
 import React, { useState, useEffect } from "react";
 import theme from "../../../utils/theme/theme";
-import { ChakraProvider, Portal, useDisclosure, Grid } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Portal,
+  useDisclosure,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Button,
+} from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
 import routes from "../routes.js";
 import MainPanel from "../components/Layout/MainPanel";
 import PanelContainer from "../components/Layout/PanelContainer";
 import PanelContent from "../components/Layout/PanelContent";
-import AdminNavbar from "../components/Navbars/AdminNavbar.js";
 import Papa from "papaparse";
-import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 
 export default function MentorData(props) {
   const { ...rest } = props;
@@ -63,6 +71,7 @@ export default function MentorData(props) {
   };
 
   const [data, setData] = useState({});
+  const [showTable, setShowTable] = useState(false); // State to control table visibility
   Papa.parse(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEN31YU4jB_-hIetzeK6n3uMyneLuoClvaEZfzhRK9SqWxFe9YGpflCk9LgR3f-Kjg9tlYT_8TJUGD/pub?output=csv",
     {
@@ -74,6 +83,10 @@ export default function MentorData(props) {
     }
   );
   const mentors = Array.from(data);
+
+  const handleShowTable = () => {
+    setShowTable(!showTable);
+  };
 
   return (
     <ChakraProvider theme={theme} resetCss={false}>
@@ -90,36 +103,41 @@ export default function MentorData(props) {
           xl: "calc(100% - 275px)",
         }}
       >
-        <Portal>
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"AYUSH PORTAL"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
-            fixed={fixed}
-            {...rest}
-          />
-        </Portal>
         <PanelContent>
           <PanelContainer style={{ marginTop: "100px" }}>
-            <Table variant="simple">
-              <Thead>
-                <Tr>
-                  <Th>Mentor</Th>
-                  <Th>Mentees</Th>
-                  <Th>Domain</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {mentors.map((data, index) => (
-                  <Tr key={index}>
-                    <Td>{data.Mentors}</Td>
-                    <Td>{data.Mentees}</Td>
-                    <Td>{data.Domain}</Td>
+            {!showTable && (
+              <Button
+                onClick={handleShowTable}
+                colorScheme="blue"
+                size="lg"
+                mx="auto"
+                display="block"
+                my={4}
+              >
+                Recommend Mentors
+              </Button>
+            )}
+            <h1 style={{ textAlign: "center", fontWeight: "bold" }}>Mentors</h1>
+            {showTable && (
+              <Table variant="simple">
+                <Thead>
+                  <Tr>
+                    <Th>Mentor</Th>
+                    <Th>Mentees</Th>
+                    <Th>Domain</Th>
                   </Tr>
-                ))}
-              </Tbody>
-            </Table>
+                </Thead>
+                <Tbody>
+                  {mentors.map((data, index) => (
+                    <Tr key={index}>
+                      <Td>{data.Mentors}</Td>
+                      <Td>{data.Mentees}</Td>
+                      <Td>{data.Domain}</Td>
+                    </Tr>
+                  ))}
+                </Tbody>
+              </Table>
+            )}
           </PanelContainer>
         </PanelContent>
       </MainPanel>
