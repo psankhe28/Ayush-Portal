@@ -4,4 +4,4 @@ const messageRoutes = require("./messageRoutes");
 const imageRoutes = require("./imageRoutes");
 const aiRoutes = require("./openaiRoutes");
 
-module.exports = { userRoutes, chatRoutes, messageRoutes, imageRoutes,aiRoutes };
+module.exports = { userRoutes, chatRoutes, messageRoutes,aiRoutes,imageRoutes };

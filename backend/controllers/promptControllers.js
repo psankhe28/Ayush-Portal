@@ -1,3 +1,4 @@
+const express = require("express");
 const axios = require("axios");
 const OpenAI = require("openai");
 require('dotenv').config();
@@ -25,4 +26,4 @@ const promptMessage = async (req, res) => {
   }
 };
 
-module.exports = promptMessage;
+module.exports = { promptMessage};

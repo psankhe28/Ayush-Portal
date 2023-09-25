@@ -23,4 +23,4 @@ const generateImage = async (prompt, size = '1024x1024') => {
   }
 };
 
-module.exports = generateImage;
+module.exports = {generateImage};
