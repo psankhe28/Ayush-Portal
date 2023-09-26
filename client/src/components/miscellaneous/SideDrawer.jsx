@@ -54,9 +54,10 @@ const SideDrawer = () => {
     localStorage.removeItem("userInfo");
     navigate("/");
   };
+
   const submitHandler=()=>{
     //console.log("hhhh");
-    navigate("/home");
+    navigate("/");
 }
   const handleSearch = async () => {
     if (!search) {
