@@ -73,7 +73,8 @@ export default function MentorData(props) {
   const [data, setData] = useState({});
   const [showTable, setShowTable] = useState(false); // State to control table visibility
   Papa.parse(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEN31YU4jB_-hIetzeK6n3uMyneLuoClvaEZfzhRK9SqWxFe9YGpflCk9LgR3f-Kjg9tlYT_8TJUGD/pub?output=csv",
+    // "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEN31YU4jB_-hIetzeK6n3uMyneLuoClvaEZfzhRK9SqWxFe9YGpflCk9LgR3f-Kjg9tlYT_8TJUGD/pub?output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSke_rQWVlVcI8TGf67ghM6VR_gOhL0SbZeYysoLjYczMOjAF8FJKa-VCn-yeI5tw_Qv8lQyzJ5axN3/pub?output=csv",
     {
       download: true,
       header: true,
@@ -117,22 +118,29 @@ export default function MentorData(props) {
                 Recommend Mentors
               </Button>
             )}
-            <h1 style={{ textAlign: "center", fontWeight: "bold" }}>Mentors</h1>
+            {showTable && (
+              <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
+                Mentors
+              </h1>
+            )}
+            <br/><br/><br/>
             {showTable && (
               <Table variant="simple">
                 <Thead>
                   <Tr>
-                    <Th>Mentor</Th>
-                    <Th>Mentees</Th>
+                    <Th>Name</Th>
+                    <Th>Identity</Th>
                     <Th>Domain</Th>
+                    <Th>Experience</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
                   {mentors.map((data, index) => (
                     <Tr key={index}>
-                      <Td>{data.Mentors}</Td>
-                      <Td>{data.Mentees}</Td>
+                      <Td>{data.Name}</Td>
+                      <Td>{data.Identity}</Td>
                       <Td>{data.Domain}</Td>
+                      <Td>{data.Experience}</Td>
                     </Tr>
                   ))}
                 </Tbody>
