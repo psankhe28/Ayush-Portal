@@ -6,6 +6,7 @@
 </p>
 <p align="center">
   <b>Team Bharat</b>
+  <b>Pre SIH 2023</b>
 </p>
 <hr>
 
